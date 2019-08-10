@@ -14,14 +14,16 @@ const MovieList = props => {
           console.error('Server Error', error);
         });
     }
-    
+
     getMovies();
   }, []);
-  
+
   return (
     <div className="movie-list">
       {movies.map(movie => (
+        <Link to="/movies/:id">
         <MovieDetails key={movie.id} movie={movie} />
+        </Link>
       ))}
     </div>
   );
